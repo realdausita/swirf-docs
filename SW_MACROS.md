@@ -37,12 +37,14 @@ they pin specific values to the recipe path and document intent.
 | `SW_STACKALLOC(size, base)` | Fresh table allocation at that point |
 | `SW_WATERMARK` | Banner string: `protected by Swirf Obfuscator V1` |
 | `SW_SCRIPT_ID` | Build-local integer, fresh every build |
+| `SW_LINE` | Current source line number as a constant |
+| `SW_JIT(f)` / `SW_JIT_MAX(f)` | Speed hint, same path as `SW_NO_VIRTUALIZE` (plain VM ops, no fusion) |
 
 ## Not supported in V1
 
 - `SW_NO_UPVALUES` - aborts with a clear error, use `SW_NO_VIRTUALIZE`
 - Unknown `SW_*` names - abort with a clear error
-- `SW_*` as anything but a direct call (or bare identifier for `SW_OBFUSCATED`, `SW_WATERMARK`, `SW_SCRIPT_ID`)
+- `SW_*` as anything but a direct call (or bare identifier for `SW_OBFUSCATED`, `SW_WATERMARK`, `SW_SCRIPT_ID`, `SW_LINE`)
 - Do not name your own variables/functions `SW_*` - the names are reserved
 
 ## Example
