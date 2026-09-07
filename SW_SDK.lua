@@ -18,6 +18,9 @@ if not SW_OBFUSCATED then
   SW_PRECHECK = function(f) return f() end
   SW_STACKALLOC = function() return {} end
   SW_NO_VIRTUALIZE = _id
+  SW_JIT = _id
+  SW_JIT_MAX = _id
   SW_WATERMARK = "dev"
   SW_SCRIPT_ID = 0
+  SW_LINE = 0
 end
